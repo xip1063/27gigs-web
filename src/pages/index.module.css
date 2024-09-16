@@ -1,0 +1,11 @@
+.beams {
+  background-image: url('../assets/beams/hero@75.jpg');
+}
+
+:global(.dark) .beams {
+  background-image: url('../assets/beams/hero-dark@90.jpg');
+}
+
+:global(.dark) .hero {
+  background-image: url('../assets/backgrounds/hero-bg@2x.png');
+}

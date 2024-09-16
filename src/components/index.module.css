@@ -1,0 +1,17 @@
+.beams {
+  background-image: url('../assets/beams/hero@75.jpg');
+  background-size: 150rem;
+}
+
+:global(.dark) .beams {
+  background-image: url('../assets/beams/hero-dark@90.jpg');
+  background-size: 86.125rem;
+}
+
+:global(.dark) .hero {
+  background-image: url('../assets/backgrounds/hero-bg@2x.webp');
+}
+
+:global(.dark) .eventHero {
+  background-image: url('../assets/backgrounds/event-hero-@2x.png');
+}
