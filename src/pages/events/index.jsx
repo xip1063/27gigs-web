@@ -134,18 +134,18 @@ const SearchBox = () => (
       placeholder='Add Dates'
       className='w-full sm:w-auto outline-none border-0 hocus:border-0 px-4 py-2 sm:py-0 border-t sm:border-t-0 sm:border-l mb-2 sm:mb-0'
     />
-    <select className='w-full sm:w-auto px-4 py-2 sm:py-0 border-t sm:border-t-0 sm:border-l mb-2 sm:mb-0'>
+    <Select className='w-full sm:w-auto px-4 py-2 border-0 sm:py-0 border-t sm:border-t-0 sm:border-l mb-2 sm:mb-0'>
       <option value=''>Select Category</option>
       <option value='Music'>Music</option>
       <option value='Sports'>Sports</option>
       <option value='Art'>Art</option>
       <option value='Food'>Food</option>
       <option value='Other'>Other</option>
-    </select>
+    </Select>
     <Input
       type='text'
       placeholder='Add Location'
-      className='w-full sm:w-auto px-4 py-2 sm:py-0 border-t sm:border-t-0 sm:border-l mb-2 sm:mb-0'
+      className='w-full sm:w-auto px-4 py-2 border-0 focus:border-0  sm:py-0 border-t sm:border-t-0 sm:border-l mb-2 sm:mb-0'
     />
     <Select className='w-full sm:w-auto px-4 border-0 focus:ring-0 focus:border-0 py-2 border-b-0 sm:py-0 border-t sm:border-t-0 sm:border-l mb-2 sm:mb-0'>
       <option value=''>Select Price Range</option>
