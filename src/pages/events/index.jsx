@@ -4,7 +4,7 @@ import { Grid, List, MoreVertical } from 'lucide-react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import styles from './index.module.css';
 
 const events = [
@@ -111,13 +111,43 @@ const EventCard = ({ image, date, location, description }) => (
 );
 
 const EventCarousel = ({ events }) => {
+  const scrollRef = useRef(null);
+
+  const scroll = (direction) => {
+    if (scrollRef.current) {
+      const { scrollLeft, clientWidth } = scrollRef.current;
+      const scrollTo =
+        direction === 'left'
+          ? scrollLeft - clientWidth
+          : scrollLeft + clientWidth;
+      scrollRef.current.scrollTo({ left: scrollTo, behavior: 'smooth' });
+    }
+  };
+
   return (
-    <div className='flex flex-col sm:flex-row overflow-x-auto hide-scrollbar snap-x snap-mandatory'>
-      {events.map((event) => (
-        <div key={event.id} className='snap-start'>
-          <EventCard {...event} />
-        </div>
-      ))}
+    <div className='relative'>
+      <div
+        ref={scrollRef}
+        className='flex overflow-x-auto hide-scrollbar snap-x snap-mandatory'
+      >
+        {events.map((event) => (
+          <div key={event.id} className='snap-start'>
+            <EventCard {...event} />
+          </div>
+        ))}
+      </div>
+      <button
+        onClick={() => scroll('left')}
+        className='absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full'
+      >
+        ←
+      </button>
+      <button
+        onClick={() => scroll('right')}
+        className='absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full'
+      >
+        →
+      </button>
     </div>
   );
 };
