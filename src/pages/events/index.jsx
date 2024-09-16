@@ -1,11 +1,11 @@
-import EventHero from '@/components/EventHero'
-import { Grid, List, MoreVertical } from 'lucide-react'
-import Head from 'next/head'
-import Image from 'next/image'
-import Link from 'next/link'
-import React, { useState, useEffect } from 'react'
-import styles from './index.module.css'
-import { cn } from '@/lib/utils'
+import { cn } from '@/lib/utils';
+import { Input, Select } from '@headlessui/react';
+import { Grid, List, MoreVertical } from 'lucide-react';
+import Head from 'next/head';
+import Image from 'next/image';
+import Link from 'next/link';
+import { useEffect, useState } from 'react';
+import styles from './index.module.css';
 
 const events = [
   {
@@ -59,7 +59,7 @@ const events = [
     image: 'https://picsum.photos/200',
     price: 20.0,
   },
-]
+];
 
 const dummyEvents = [
   {
@@ -90,7 +90,7 @@ const dummyEvents = [
     location: 'VICTORIA FALLS',
     description: 'Lorem ipsum dolor sit amet, conse adipiscing elit vest nunc.',
   },
-]
+];
 
 const EventCard = ({ image, date, location, description }) => (
   <div className='flex-shrink-0 w-full sm:w-80 mb-6 sm:mb-0 sm:mr-6 overflow-hidden rounded-lg shadow-lg'>
@@ -108,7 +108,7 @@ const EventCard = ({ image, date, location, description }) => (
       </div>
     </div>
   </div>
-)
+);
 
 const EventCarousel = ({ events }) => {
   return (
@@ -119,20 +119,20 @@ const EventCarousel = ({ events }) => {
         </div>
       ))}
     </div>
-  )
-}
+  );
+};
 
 const SearchBox = () => (
   <div className='bg-white rounded-lg sm:rounded-full shadow-lg flex flex-col sm:flex-row items-center p-2'>
-    <input
+    <Input
       type='text'
       placeholder='What are you looking for?'
-      className='w-full sm:w-auto flex-grow px-4 py-2 sm:py-0 focus:outline-none mb-2 sm:mb-0'
+      className='w-full sm:w-auto border-0 ring-0 focus:border-0 flex-grow px-4 py-2 sm:py-0 focus:outline-none mb-2 sm:mb-0'
     />
-    <input
+    <Input
       type='text'
       placeholder='Add Dates'
-      className='w-full sm:w-auto px-4 py-2 sm:py-0 border-t sm:border-t-0 sm:border-l mb-2 sm:mb-0'
+      className='w-full sm:w-auto outline-none border-0 hocus:border-0 px-4 py-2 sm:py-0 border-t sm:border-t-0 sm:border-l mb-2 sm:mb-0'
     />
     <select className='w-full sm:w-auto px-4 py-2 sm:py-0 border-t sm:border-t-0 sm:border-l mb-2 sm:mb-0'>
       <option value=''>Select Category</option>
@@ -142,17 +142,17 @@ const SearchBox = () => (
       <option value='Food'>Food</option>
       <option value='Other'>Other</option>
     </select>
-    <input
+    <Input
       type='text'
       placeholder='Add Location'
       className='w-full sm:w-auto px-4 py-2 sm:py-0 border-t sm:border-t-0 sm:border-l mb-2 sm:mb-0'
     />
-    <select className='w-full sm:w-auto px-4 py-2 sm:py-0 border-t sm:border-t-0 sm:border-l mb-2 sm:mb-0'>
+    <Select className='w-full sm:w-auto px-4 border-0 focus:ring-0 focus:border-0 py-2 border-b-0 sm:py-0 border-t sm:border-t-0 sm:border-l mb-2 sm:mb-0'>
       <option value=''>Select Price Range</option>
       <option value='0 - 5'>0 - 5</option>
       <option value='5 - 10'>5 - 10</option>
       <option value='10 - 15'>10 - 15</option>
-    </select>
+    </Select>
     <button className='w-full sm:w-auto bg-purple-600 text-white p-2 rounded-full'>
       <svg
         xmlns='http://www.w3.org/2000/svg'
@@ -170,15 +170,15 @@ const SearchBox = () => (
       </svg>
     </button>
   </div>
-)
+);
 
 const EventsPageHero = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const [isClient, setIsClient] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    setIsClient(true) // Set to true when the component is mounted on the client side
-  }, [])
+    setIsClient(true); // Set to true when the component is mounted on the client side
+  }, []);
 
   return (
     <div
@@ -216,8 +216,8 @@ const EventsPageHero = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default function EventsPage() {
   return (
@@ -427,5 +427,5 @@ export default function EventsPage() {
         </div>
       </main>
     </>
-  )
+  );
 }
