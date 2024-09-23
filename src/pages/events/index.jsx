@@ -4,7 +4,7 @@ import { Grid, List, MoreVertical } from 'lucide-react';
 import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import styles from './index.module.css';
 
 const events = [
@@ -125,7 +125,7 @@ const EventCarousel = ({ events }) => {
   };
 
   return (
-    <div className='relative'>
+    <div className='relative pl-4'>
       <div
         ref={scrollRef}
         className='flex overflow-x-auto hide-scrollbar snap-x snap-mandatory'
@@ -138,13 +138,13 @@ const EventCarousel = ({ events }) => {
       </div>
       <button
         onClick={() => scroll('left')}
-        className='absolute left-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full'
+        className='absolute -left-10 top-1/2 transform -translate-y-1/2 bg-sky-500 text-white size-10 rounded-full'
       >
         ←
       </button>
       <button
         onClick={() => scroll('right')}
-        className='absolute right-0 top-1/2 transform -translate-y-1/2 bg-white bg-opacity-50 p-2 rounded-full'
+        className='absolute -right-10 top-1/2 transform -translate-y-1/2 bg-sky-500 text-white  size-10 rounded-full'
       >
         →
       </button>
