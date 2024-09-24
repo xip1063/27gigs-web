@@ -138,13 +138,13 @@ const EventCarousel = ({ events }) => {
       </div>
       <button
         onClick={() => scroll('left')}
-        className='absolute -left-10 top-1/2 transform -translate-y-1/2 bg-sky-500 text-white size-10 rounded-full'
+        className='absolute -left-10 top-1/2 transform -translate-y-1/2 btn-gradient text-white size-10 rounded-full'
       >
         ←
       </button>
       <button
         onClick={() => scroll('right')}
-        className='absolute -right-10 top-1/2 transform -translate-y-1/2 bg-sky-500 text-white  size-10 rounded-full'
+        className='absolute -right-10 top-1/2 transform -translate-y-1/2 btn-gradient text-white  size-10 rounded-full'
       >
         →
       </button>
